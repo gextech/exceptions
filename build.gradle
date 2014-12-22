@@ -1,8 +1,20 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+  }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
 
 version = project.version
+group = project.group
+
 sourceCompatibility = project.javaVersion
 targetCompatibility = project.javaVersion
 
@@ -12,4 +24,80 @@ repositories {
 
 dependencies {
   compile 'org.projectlombok:lombok:1.14.8'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+  classifier = 'sources'
+  from sourceSets.main.allSource
+}
+
+artifacts {
+  archives sourcesJar
+}
+
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+      artifact sourcesJar
+
+      pom.withXml {
+        def root = asNode()
+        root.appendNode('name', project.name)
+        root.appendNode('description', project.description)
+        root.appendNode('url', 'https://github.com/gextech/serling-exceptions')
+        root.appendNode('inceptionYear', '2014')
+
+        def scm = root.appendNode('scm')
+        scm.appendNode('url', 'https://github.com/gextech/serling-exceptions')
+        scm.appendNode('connection', 'scm:https://domix@github.com/gextech/serling-exceptions.git')
+        scm.appendNode('developerConnection', 'scm:git@github.com:gextech/serling-exceptions.git')
+
+        def license = root.appendNode('licenses').appendNode('license')
+        license.appendNode('name', 'The Apache Software License, Version 2.0')
+        license.appendNode('url', 'http://www.apache.org/licenses/LICENSE-2.0.txt')
+        license.appendNode('distribution', 'repo')
+
+        def developers = root.appendNode('developers')
+        def domix = developers.appendNode('developer')
+        domix.appendNode('id', 'domix')
+        domix.appendNode('name', 'Domingo Suarez Torres')
+        domix.appendNode('email', 'domingo.suarez@gmail.com')
+      }
+    }
+  }
+}
+
+bintray {
+  user = bintray_user
+  key = bintray_api_key
+
+  publications = ['mavenJava']
+  dryRun = false //Whether to run this as dry-run, without deploying
+  publish = true //If version should be auto published after an upload
+  pkg {
+    repo = 'oss'
+    userOrg = 'gextech'
+    name = project.name
+    desc = project.description
+    websiteUrl = 'https://github.com/gextech/serling-exceptions'
+    issueTrackerUrl = 'https://github.com/gextech/serling-exceptions/issues'
+    vcsUrl = 'https://github.com/gextech/serling-exceptions.git'
+    licenses = ['Apache-2.0']
+    labels = ['gex', 'serling', 'exceptions']
+    publicDownloadNumbers = true
+    attributes = ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee']
+    //Optional version descriptor
+    version {
+      name = project.version
+      desc = project.description
+      mavenCentralSync {
+        sync = false
+        user = ''
+        password = ''
+        close = '1'
+      }
+    }
+  }
 }
