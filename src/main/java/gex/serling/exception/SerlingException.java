@@ -36,33 +36,33 @@ public class SerlingException extends RuntimeException {
     super(message, cause);
   }
 
-  public SerlingException(String message, Map extraData) {
+  public SerlingException(String message, Map<String, Object> extraData) {
     super(message);
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, Map extraData, Throwable cause) {
+  public SerlingException(String message, Map<String, Object> extraData, Throwable cause) {
     super(message, cause);
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, List validationErrors) {
+  public SerlingException(String message, List<String> validationErrors) {
     super(message);
     this.validationErrors = validationErrors;
   }
 
-  public SerlingException(String message, List validationErrors, Throwable cause) {
+  public SerlingException(String message, List<String> validationErrors, Throwable cause) {
     super(message, cause);
     this.validationErrors = validationErrors;
   }
 
-  public SerlingException(String message, Map extraData, List validationErrors) {
+  public SerlingException(String message, Map<String, Object> extraData, List<String> validationErrors) {
     super(message);
     this.validationErrors = validationErrors;
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, Map extraData, List validationErrors, Throwable cause) {
+  public SerlingException(String message, Map<String, Object> extraData, List<String> validationErrors, Throwable cause) {
     super(message, cause);
     this.validationErrors = validationErrors;
     this.extraData = extraData;
