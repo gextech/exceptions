@@ -1,4 +1,12 @@
 
+0.0.3 / 2014-12-22
+==================
+
+  * improved build info, removed Java compiler warnings
+  * fixed missing bintray credentials
+  * fixed changelog file
+  * added changelog
+
 0.0.2 / 2014-12-22
 ==================
 
