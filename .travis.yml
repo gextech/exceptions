@@ -1,0 +1,9 @@
+language: groovy
+jdk:
+- oraclejdk8
+env:
+  global:
+  - TERM=dumb
+  - GRADLE_OPTS="-Xmx768m -Xms256m -XX:MaxPermSize=256m -XX:+CMSClassUnloadingEnabled"
+  - _JAVA_OPTIONS="-XX:-UseSplitVerifier"
+script: ./gradlew clean build

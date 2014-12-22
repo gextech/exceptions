@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+
+version = project.version
+sourceCompatibility = project.javaVersion
+targetCompatibility = project.javaVersion
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'org.projectlombok:lombok:1.14.8'
+}
