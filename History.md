@@ -1,4 +1,9 @@
 
+0.1.0 / 2014-12-23 
+==================
+
+  * renamed project, renamed packages, renamed base exception thanks to @atomsfat
+
 0.0.4 / 2014-12-22
 ==================
 
