@@ -1,4 +1,4 @@
-package gex.serling.exception;
+package gex.commons.exception;
 
 import lombok.Getter;
 
@@ -7,7 +7,7 @@ import lombok.Getter;
  *
  * @author domix on 11/20/14.
  */
-public class DomainClassValidationException extends SerlingException {
+public class DomainClassValidationException extends GenericException {
   @Getter
   private Object entity;
 

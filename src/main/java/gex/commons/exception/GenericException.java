@@ -1,4 +1,4 @@
-package gex.serling.exception;
+package gex.commons.exception;
 
 
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.util.Map;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptyMap;
 
-public class SerlingException extends RuntimeException {
+public class GenericException extends RuntimeException {
 
   @Getter
   @Setter
@@ -24,45 +24,45 @@ public class SerlingException extends RuntimeException {
   @Setter
   private String i18nCode = "";
 
-  public SerlingException(Throwable cause) {
+  public GenericException(Throwable cause) {
     super(cause);
   }
 
-  public SerlingException(String message) {
+  public GenericException(String message) {
     super(message);
   }
 
-  public SerlingException(String message, Throwable cause) {
+  public GenericException(String message, Throwable cause) {
     super(message, cause);
   }
 
-  public SerlingException(String message, Map<String, Object> extraData) {
+  public GenericException(String message, Map<String, Object> extraData) {
     super(message);
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, Map<String, Object> extraData, Throwable cause) {
+  public GenericException(String message, Map<String, Object> extraData, Throwable cause) {
     super(message, cause);
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, List<String> validationErrors) {
+  public GenericException(String message, List<String> validationErrors) {
     super(message);
     this.validationErrors = validationErrors;
   }
 
-  public SerlingException(String message, List<String> validationErrors, Throwable cause) {
+  public GenericException(String message, List<String> validationErrors, Throwable cause) {
     super(message, cause);
     this.validationErrors = validationErrors;
   }
 
-  public SerlingException(String message, Map<String, Object> extraData, List<String> validationErrors) {
+  public GenericException(String message, Map<String, Object> extraData, List<String> validationErrors) {
     super(message);
     this.validationErrors = validationErrors;
     this.extraData = extraData;
   }
 
-  public SerlingException(String message, Map<String, Object> extraData, List<String> validationErrors, Throwable cause) {
+  public GenericException(String message, Map<String, Object> extraData, List<String> validationErrors, Throwable cause) {
     super(message, cause);
     this.validationErrors = validationErrors;
     this.extraData = extraData;

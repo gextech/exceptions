@@ -1,4 +1,4 @@
-package gex.serling.exception;
+package gex.commons.exception;
 
 import lombok.Getter;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  * @author domix on 11/20/14.
  */
-public class ObjectNotFoundException extends SerlingException {
+public class ObjectNotFoundException extends GenericException {
   public static final String MESSAGE = "No object with the given identifier exists";
   @Getter
   private Serializable identifier;
