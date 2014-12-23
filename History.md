@@ -1,4 +1,10 @@
 
+0.0.4 / 2014-12-22
+==================
+
+  * fix for bintray credential
+  * added to ignore list
+
 0.0.3 / 2014-12-22
 ==================
 
