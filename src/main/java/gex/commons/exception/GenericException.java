@@ -24,6 +24,10 @@ public class GenericException extends RuntimeException {
   @Setter
   private String i18nCode = "";
 
+  @Getter
+  @Setter
+  private String code = "";
+
   public GenericException(Throwable cause) {
     super(cause);
   }
