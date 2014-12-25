@@ -1,4 +1,13 @@
 
+0.1.1 / 2014-12-25
+==================
+
+  * added BinTray download badge
+  * added code
+  * added support for container build
+  * polish changelog
+  * added changelog
+
 0.1.0 / 2014-12-23
 ==================
 
