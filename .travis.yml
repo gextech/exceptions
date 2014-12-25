@@ -11,3 +11,5 @@ jdk:
 
 env:
 - TERM=dumb
+
+script: ./gradlew clean build
