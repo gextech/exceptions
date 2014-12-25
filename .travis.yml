@@ -1,6 +1,8 @@
 sudo: false
 
-cache: maven
+cache:
+  directories:
+  - $HOME/.gradle
 
 language: groovy
 
