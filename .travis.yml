@@ -1,5 +1,7 @@
 sudo: false
 
+cache: maven
+
 language: groovy
 
 jdk:
