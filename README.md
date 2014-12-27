@@ -1,7 +1,7 @@
 Generic exceptions
 ==================
 
-[logo]: https://dl.dropboxusercontent.com/u/3942208/gex-commons-exceptions.png "Logo"
+![logo](https://dl.dropboxusercontent.com/u/3942208/gex-commons-exceptions.png "Logo")
 
 [![Build Status](https://img.shields.io/travis/gextech/exceptions/master.svg?style=flat)](https://travis-ci.org/gextech/exceptions)
 [![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.txt)
