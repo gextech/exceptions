@@ -1,4 +1,14 @@
 
+0.1.3 / 2015-01-21
+==================
+
+  * sign files configuration, upgraded bintray plugin
+  * fixed logo url
+  * added license header, improved docs
+  * Added Gitter badge
+  * added script to run in travis
+  * caching the gradle home in travis
+
 0.1.2 / 2014-12-25
 ==================
 
