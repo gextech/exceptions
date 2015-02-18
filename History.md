@@ -1,4 +1,12 @@
 
+0.1.4 / 2015-02-18
+==================
+
+  * upgraded to Gradle 2.3
+  * fixed license copyright
+  * upgraded to lombok 1.16.2
+  * added a brand new class to handle the Entity validation exceptions
+
 0.1.3 / 2015-01-21
 ==================
 
