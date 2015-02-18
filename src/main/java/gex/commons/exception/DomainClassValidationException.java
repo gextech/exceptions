@@ -1,6 +1,6 @@
 /**
  *
- * Copyright (C) 2014 Grupo Expansion <oss@expansion.com.mx>
+ * Copyright (C) 2014-2015 Grupo Expansion <oss@expansion.com.mx>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,10 @@ import lombok.Getter;
  * Thrown when some component found invalid values in a entity.
  *
  * @author domix on 11/20/14.
+ * @deprecated As of release 0.1.4, replaced by {@link gex.commons.exception.EntityValidationException}. This class will be deleted in 0.2 release.
+ * @todo Remove this class in release 0.2
  */
+@Deprecated
 public class DomainClassValidationException extends GenericException {
   @Getter
   private Object entity;
