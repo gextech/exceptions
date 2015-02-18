@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-  compile 'org.projectlombok:lombok:1.14.8'
+  compile 'org.projectlombok:lombok:1.16.2'
 }
 
 Date buildTimeAndDate = new Date()
@@ -75,11 +75,6 @@ artifacts {
 }
 
 license {
-  //excludes(["**/*.jade4j", "**/*.jade"])
-  ext.year = 2014
-  ext.name = 'Grupo Expansion'
-  ext.email = 'oss@expansion.com.mx'
-
   header rootProject.file('HEADER_LICENSE')
   strictCheck true
 }
@@ -118,8 +113,8 @@ publishing {
 }
 
 bintray {
-  user = project.hasProperty('bintray_user') ? bintray_user : ''
-  key = project.hasProperty('bintray_api_key') ? bintray_api_key : ''
+  user = project.hasProperty('bintrayUsername') ? bintrayUsername : ''
+  key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
 
   publications = ['mavenJava']
   dryRun = false //Whether to run this as dry-run, without deploying
@@ -141,8 +136,8 @@ bintray {
       name = project.version
       desc = project.description
       gpg {
-        sign = project.hasProperty('gex_gpg_passphrase')
-        passphrase = project.hasProperty('gex_gpg_passphrase') ? gex_gpg_passphrase : ''
+        sign = project.hasProperty('bintrayGExGpgPassphrase')
+        passphrase = project.hasProperty('bintrayGExGpgPassphrase') ? bintrayGExGpgPassphrase : ''
       }
       mavenCentralSync {
         sync = false
