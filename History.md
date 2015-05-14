@@ -1,4 +1,11 @@
 
+0.2.0 / 2015-05-13
+==================
+
+  * deleted deprecated Exception
+  * upgraded dependencies & added gradle-versions plugin
+  * upgraded Gradle Wrapper to 2.4
+
 0.1.5 / 2015-03-08
 ==================
 
