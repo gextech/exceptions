@@ -20,7 +20,8 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.1'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.9'
   }
 }
 
@@ -33,6 +34,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.ben-manes.versions'
 
 version = project.version
 group = project.group
@@ -45,7 +47,7 @@ repositories {
 }
 
 dependencies {
-  compile 'org.projectlombok:lombok:1.16.2'
+  compile 'org.projectlombok:lombok:1.16.4'
 }
 
 Date buildTimeAndDate = new Date()
