@@ -27,7 +27,7 @@ buildscript {
 
 plugins {
   id "com.github.hierynomus.license" version "0.11.0"
-  id 'net.researchgate.release' version '2.1.1'
+  id 'net.researchgate.release' version '2.1.2'
 }
 
 apply plugin: 'java'
@@ -86,6 +86,9 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
       from components.java
+
+      it.pom.getRuntimeDependencies().clear()
+
       artifact sourcesJar
 
       pom.withXml {
